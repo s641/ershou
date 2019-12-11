@@ -104,6 +104,10 @@
   background: #e5e5e5;
   margin-right: 5px;
 }
+.wamp .content .nav_cut .page button:first-of-type,
+.wamp .content .nav_cut .page button:last-of-type {
+  width: 90px;
+}
 .wamp .content .nav_cut .page .active {
   color: white;
   background: #BCE8F1;

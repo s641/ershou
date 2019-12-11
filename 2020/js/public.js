@@ -1,10 +1,9 @@
-
 //top,nav切换
 function top_switch() {
-	var head=$('.header')[0];
-	var top=$('.top',head)[0];
-	var fr=$('.fr',top)[0];
-	var list =fr.children;
+	var head = $('.header')[0];
+	var top = $('.top', head)[0];
+	var fr = $('.fr', top)[0];
+	var list = fr.children;
 	forEach(list, function(el, i) {
 		bind(el, 'mouseenter', function() {
 			forEach(list, function(el) {
@@ -43,18 +42,16 @@ function nav_cut() {
 nav_cut()
 
 //商品搜索
-function searchAll(){
+function searchAll() {
 	//获取输入框信息
-	var oSeach=$('.seach')[0];
-	var oInput=$('input',oSeach);
-	var seachCon=$('.seach_con',oSeach)[0];
-	bind(oInput[1],'click',function(){
-		seachCon.style.display='block';
+	var oSeach = $('.seach')[0];
+	var oInput = $('input', oSeach);
+	var seachCon = $('.seach_con', oSeach)[0];
+	bind(oInput[1], 'click', function() {
+		seachCon.style.display = 'block';
 	})
-	oInput[0].onblur=function(){
-		seachCon.style.display='none';
+	oInput[0].onblur = function() {
+		seachCon.style.display = 'none';
 	}
 }
 searchAll()
-
-

@@ -1,18 +1,19 @@
 //乱序，渲染轮播图
-function swiper(){
-	var con=$('.swiper-wrapper')[0];
+function swiper() {
+	var con = $('.swiper-wrapper')[0];
 	//随机获取四个数据
-	var data=[];
+	var data = [];
 	//bug,会产生相同数字
-	var num=[Math.round(Math.random()*17),Math.round(Math.random()*17),Math.round(Math.random()*17),Math.round(Math.random()*17)];
-	
-	forEach(num,function(el,i){
-		data[i]=img[el]
+	var num = [Math.round(Math.random() * 17), Math.round(Math.random() * 17), Math.round(Math.random() * 17), Math.round(
+		Math.random() * 17)];
+
+	forEach(num, function(el, i) {
+		data[i] = img[el]
 	})
-	forEach(data,function(el){
-		var div=document.createElement('div');
-		div.className='swiper-slide';
-		div.innerHTML=`<img src="../img/${el}" alt="">`;
+	forEach(data, function(el) {
+		var div = document.createElement('div');
+		div.className = 'swiper-slide';
+		div.innerHTML = `<img src="../img/${el}" alt="">`;
 		con.appendChild(div);
 	})
 }
@@ -33,13 +34,14 @@ var mySwiper = new Swiper('.swiper-container', {
 
 
 //渲染头条新闻
-function news(){
-	var left=$('.new_con',$('.con_left')[0])[0];
-	
-	var data=newData.news.myweb;
-	forEach(data,function(el,i){
-		var lis=document.createElement('li');
-		lis.innerHTML=`
+function news() {
+	var left = $('.new_con', $('.con_left')[0])[0];
+
+	var data = newData.news.myweb;
+	forEach(data, function(el, i) {
+		var lis = document.createElement('li');
+		lis.innerHTML =
+			`
 			<a href="new_list.html?newId=${el.newId}">【标题】${el.name}</a>
 			<div class="new_info">
 				<img src="../img/${el.image}" >
@@ -55,55 +57,57 @@ function news(){
 news()
 
 //渲染头条新闻
-function allNews(){
-	var right=$('.list',$('.con_right')[0])[0];
-	
-	var data=newData.news.schoolnew;
-	forEach(data,function(el,i){
-		if(i<10){
-			var lis=document.createElement('li');
-			lis.innerHTML=`
+function allNews() {
+	var right = $('.list', $('.con_right')[0])[0];
+
+	var data = newData.news.schoolnew;
+	forEach(data, function(el, i) {
+		if (i < 10) {
+			var lis = document.createElement('li');
+			lis.innerHTML =
+				`
 				<p><span></span><time>${el.time[0]}-${el.time[1]}-${el.time[2]}</time><span></span>${el.lcnum}</p>
 				<a href="new_list.html?newId=${el.newId}">${el.name}</a>
 			`;
 			right.appendChild(lis);
 		}
-		
+
 	})
 }
 allNews()
 
 //newContent
-function newContent(){
-	
+function newContent() {
+
 }
 newContent()
 
 
 //渲染新闻
-function detail(){
-	var search=window.location.search;
-	var newContent=$('.newContent')[0];
-	if(search){
-		search=search.split('=')[1];
-		var arr=[];
-		forEach(newData.news.myweb,function(el){
+function detail() {
+	var search = window.location.search;
+	var newContent = $('.newContent')[0];
+	if (search) {
+		search = search.split('=')[1];
+		var arr = [];
+		forEach(newData.news.myweb, function(el) {
 			arr.push(el)
 		})
-		forEach(newData.news.schoolnew,function(el){
+		forEach(newData.news.schoolnew, function(el) {
 			arr.push(el)
 		})
-		forEach(arr,function(el){
-			if(el.newId==search){
-				newContent.innerHTML=`
+		forEach(arr, function(el) {
+			if (el.newId == search) {
+				newContent.innerHTML = `
 				<h3>${el.name}</h3>
 				<hr/>
 				<p>${el.describe}</p>
 				`;
 			}
 		})
-	}else{
-		newContent.innerHTML=`
+	} else {
+		newContent.innerHTML =
+			`
 			<h3>做自己快乐的主人</h3>
 			<hr/>
 			<p>人生最高的境界，是要拥有一种淡泊宁静的心态。最大的人格魅力，是有一颗阳光般心。得失无忧，去留无意，荣辱不惊，从容淡定，随缘不变，随遇而安，心无杂念，不染尘埃。宽以待人，与人为善，严以律己，助人为乐，懂得感恩，懂得包容，简单做人，洒脱自在，善待他人，快乐自己。</p>

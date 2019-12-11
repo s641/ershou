@@ -1,32 +1,33 @@
 //商品详情
-function commodity_info(){
+function commodity_info() {
 	//获取元素
-	var con=$('.content')[0];
-	var goods=$('.goods_detail_con',con)[0];
-	var left=$('.l_wrap',$('.main_wrap',con)[0])[0];
-	var l=$('ul',left)[0];
-	var right=$('.r_wrap',$('.main_wrap',con)[0])[0];
+	var con = $('.content')[0];
+	var goods = $('.goods_detail_con', con)[0];
+	var left = $('.l_wrap', $('.main_wrap', con)[0])[0];
+	var l = $('ul', left)[0];
+	var right = $('.r_wrap', $('.main_wrap', con)[0])[0];
 	//获取传入的商品id
-	var comId=window.location.search.split('=')[1];
-	var finisharr=da.filter(function(da){
-		return da.comId== comId;
-	})[0];//存放加入已付款的订单
+	var comId = window.location.search.split('=')[1];
+	var finisharr = da.filter(function(da) {
+		return da.comId == comId;
+	})[0]; //存放加入已付款的订单
 	//获取对应数据
-	var str='';
-	var uid=null;
-	var info = da.filter(function(da){
-		return da.comId== comId;
+	var str = '';
+	var uid = null;
+	var info = da.filter(function(da) {
+		return da.comId == comId;
 	})[0];
-	for(var i=0;i<da.length;i++){
-		var num=null;
-		if(da[i].newPrice== "私聊"){
-			num=da[i].newPrice;
-		}else{
-			num='￥' + da[i].newPrice;
+	for (var i = 0; i < da.length; i++) {
+		var num = null;
+		if (da[i].newPrice == "私聊") {
+			num = da[i].newPrice;
+		} else {
+			num = '￥' + da[i].newPrice;
 		}
-		if(da[i].comId==comId){
-			uid=da[i].uId;
-			str+=`
+		if (da[i].comId == comId) {
+			uid = da[i].uId;
+			str +=
+				`
 				
 					<div class="ragnifier-container">
 						
@@ -63,134 +64,136 @@ function commodity_info(){
 			`;
 		}
 	}
-	goods.innerHTML=str;
+	goods.innerHTML = str;
 
 	//数量增减
-	var show=$('.num_show')[0];
-	var add=$('.add')[0];
-	var minus=$('.minus')[0];
-	var val='';
+	var show = $('.num_show')[0];
+	var add = $('.add')[0];
+	var minus = $('.minus')[0];
+	var val = '';
 	//事件需要触发才执行
-	bind(add,'click',function(){
+	bind(add, 'click', function() {
 		show.value++;
-		val=show.value;
+		val = show.value;
 	})
-	bind(minus,'click',function(){
-		if(val == 1){
+	bind(minus, 'click', function() {
+		if (val == 1) {
 			alert('数量不能减了哦');
 			return;
-		}else{
+		} else {
 			show.value--;
-			val=show.value;
+			val = show.value;
 		}
 	})
 
 	//新品推荐
-	var str1='';
-	var num=0;
-	for(var i=0;i<da.length;i++){
-		if(da[i].uId==uid){//有bug
-			if(num<2){
-			num++;
-			str1+=`
+	var str1 = '';
+	var num = 0;
+	for (var i = 0; i < da.length; i++) {
+		if (da[i].uId == uid) { //有bug
+			if (num < 2) {
+				num++;
+				str1 +=
+					`
 				<li>
 					<a href="commodity.html?comId=${da[i].comId}"><img src="../img/${da[i].image}"></a>
 					<h4><a href="commodity.html?comId=${da[i].comId}">${da[i].name}</a></h4>
 					<div class="prize">￥${da[i].newPrice}</div>
 				</li>
 			`;
-		}
+			}
 		}
 	}
-	l.innerHTML=str1;
-	
-	
+	l.innerHTML = str1;
+
+
 	//渲染商品描述
-	var tabCom=$('.tab_content',right)[0];
-	var ps=$('p',tabCom)[0];
-	var str2='';
-	for(var i=0;i<da.length;i++){
-		if(da[i].comId==comId){
-			str2+=`
+	var tabCom = $('.tab_content', right)[0];
+	var ps = $('p', tabCom)[0];
+	var str2 = '';
+	for (var i = 0; i < da.length; i++) {
+		if (da[i].comId == comId) {
+			str2 += `
 				${da[i].describe}
 			
 			`;
 		}
 	}
-	ps.innerHTML=str2;
-	
-	
-	var buy=$('.buy_btn')[0];
-	bind(buy,'click',function(ev){
+	ps.innerHTML = str2;
+
+
+	var buy = $('.buy_btn')[0];
+	bind(buy, 'click', function(ev) {
 		var arr = storage.get('finisharr');
-		var num = parseInt(show.value);		
+		var num = parseInt(show.value);
 		if (arr) {
-			var onoff = arr.some(function (da) {
+			var onoff = arr.some(function(da) {
 				return da.comId == comId;
 			});
 			if (onoff) {
-				arr.forEach(function(da){
+				arr.forEach(function(da) {
 					if (da.comId == comId) {
 						da.num += num;
 					}
 				});
-				storage.set('finisharr',arr);
+				storage.set('finisharr', arr);
 			} else {
 				info.num = num;
 				arr.push(finisharr);
-				storage.set('finisharr',arr);
+				storage.set('finisharr', arr);
 			}
 		} else {
 			info.num = num;
 			arr.push(finisharr);
-			storage.set('finisharr',arr);
+			storage.set('finisharr', arr);
 		}
 		//window.localStorage.setItem('finisharr',finisharr);
 		//open('order.html?comId='+comId,'_blank');
 	})
-	
+
 	//加入购物车
 	//给加入购物车添加事件
-	var addCart=$('.add_cart',goods)[0];
-	bind(addCart, 'click', function () {
+	var addCart = $('.add_cart', goods)[0];
+	bind(addCart, 'click', function() {
 		var arr = storage.get('info');
-		var num = parseInt(show.value);		
+		var num = parseInt(show.value);
 		if (arr) {
-			var onoff = arr.some(function (da) {
+			var onoff = arr.some(function(da) {
 				return da.comId == comId;
 			});
 			if (onoff) {
-				arr.forEach(function(da){
+				arr.forEach(function(da) {
 					if (da.comId == comId) {
 						da.num += num;
 					}
 				});
-				storage.set('info',arr);
+				storage.set('info', arr);
 			} else {
 				info.num = num;
 				arr.push(info);
-				storage.set('info',arr);
+				storage.set('info', arr);
 			}
 		} else {
 			info.num = num;
 			arr.push(info);
-			storage.set('info',arr);
+			storage.set('info', arr);
 		}
 	})
 }
 commodity_info()
 
 //评论和商品详情跳转
-function comments(){
-	var comCon=$('input',$('.com_info')[0])[0];
-	var comBtn=$('button',$('.com_info')[0])[0];
-	var comContent=$('.com_content')[0];
-	bind(comBtn,'click',function(){
-		var val=comCon.value;
-		if(val.trim()){
-			var con=document.createElement('div');
-			con.className='combox';
-			con.innerHTML=`
+function comments() {
+	var comCon = $('input', $('.com_info')[0])[0];
+	var comBtn = $('button', $('.com_info')[0])[0];
+	var comContent = $('.com_content')[0];
+	bind(comBtn, 'click', function() {
+		var val = comCon.value;
+		if (val.trim()) {
+			var con = document.createElement('div');
+			con.className = 'combox';
+			con.innerHTML =
+				`
 				<div class="pl-text">
 					<a href="#" class="pl-name">张三 : </a>
 					<span class="pl-con">&nbsp;${val.trim()}</span>
@@ -207,11 +210,11 @@ function comments(){
 				</div>
 			`;
 			comContent.appendChild(con);
-			comCon.value='';
-		}else{
+			comCon.value = '';
+		} else {
 			alert('请输入评论');
 		}
-		
+
 	})
 }
 comments()
@@ -219,26 +222,26 @@ comments()
 
 
 //发布和求购切换
-function info_cut(){
-	var content=$('.main_wrap',$('.content')[0])[0];
-	var box=$('.r_wrap',content)[0];
-	var lis=$('li',box);
-	var ul=$('ul',box)[0];
-	var div=nextAll(ul);
-	forEach(lis,function(el,i){
-		lis[i].index=i;
-		bind(el,'click',function(){
-			forEach(lis,function(el,i){
-				el.className='';
-				div[i].className='';
+function info_cut() {
+	var content = $('.main_wrap', $('.content')[0])[0];
+	var box = $('.r_wrap', content)[0];
+	var lis = $('li', box);
+	var ul = $('ul', box)[0];
+	var div = nextAll(ul);
+	forEach(lis, function(el, i) {
+		lis[i].index = i;
+		bind(el, 'click', function() {
+			forEach(lis, function(el, i) {
+				el.className = '';
+				div[i].className = '';
 			})
-			this.className='active';
-			div[0].className='tab_content';
-			div[1].className='comment';
-			addClassName(div[this.index],'active');
+			this.className = 'active';
+			div[0].className = 'tab_content';
+			div[1].className = 'comment';
+			addClassName(div[this.index], 'active');
 		})
 	})
-	
+
 }
 info_cut()
 
