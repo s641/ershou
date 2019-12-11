@@ -1,47 +1,10 @@
-function address(){
-	var addr=window.location.search.split('=');
-	var search=parseInt(addr[1]);
-	//当无用户登陆时，默认为用户二的信息，可以改为默认用户模板
-	if(addr[0]== ""){
-		search=2;
-	}
-	var comId=addr[2];
-	var rightCon=$('.right_content')[0];
-	var siteCon=$('.site_con',rightCon);
-	var data=people.student;
-	var str='';
-	var uData=null;
-	var nData=null;
-	var imgSrc=null;
-	var scnum=null;
-	var dznum=null;
-	var scartnum=null;//购物车数量
-	var pwd=null;
-	forEach(data,function(el){
-		if(el.uid == search){
-			uData=el;
-			imgSrc=el.imgScr;
-			scnum=el.scnum;
-			dznum=el.dznum;
-			scartnum=el.scartnum;
-			pwd=el.password;
-			str=`
-				<dl>
-					<dt>当前地址：</dt>
-					<dd>${el.address}&nbsp;&nbsp;&nbsp;联系方式：${el.phone}</dd>
-				</dl>
-			`;
-		}
-	})
-	siteCon[0].innerHTML=str;
-	
+function address(){	
 	//编辑地址
-	var update=siteCon[1];
-	var inpone=$('.inpone',update)[0];
-	var siteArea=$('.site_area',update)[0];
-	var inptwo=$('.inptwo',update)[0];
-	var inpthree=$('.inpthree',update)[0];
-	var infoSubmit=$('.info_submit',update)[0];
+	var inpone=$('.inpone')[0];
+	var siteArea=$('.site_area')[0];
+	var inptwo=$('.inptwo')[0];
+	var inpthree=$('.inpthree')[0];
+	var infoSubmit=$('.info_submit')[0];
 	bind(infoSubmit,'click',function(ev){
 		ev.preventDefault();
 		var oneval=null;
@@ -68,12 +31,7 @@ function address(){
 			alert('未输入电话号码或电话号码输入错误');
 			return
 		}
-		nData={
-			address:siteAreaval,
-			uid: search
-		}
 		alert("修改成功")
-		open('order.html?comId='+comId+'&data='+JSON.stringify(nData));
 	})
 	
 }
