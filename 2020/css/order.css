@@ -1,0 +1,159 @@
+@charset 'utf-8';
+.wamp .content .common_title {
+  width: 100%;
+  margin: 20px auto 0;
+  font-size: 14px;
+}
+.wamp .content .common_list_con {
+  width: 100%;
+  border: 1px solid #dddddd;
+  border-top: 2px solid #1A1B20;
+  margin: 10px auto 0;
+  background-color: #f7f7f7;
+  position: relative;
+}
+.wamp .content .common_list_con dl {
+  margin: 20px;
+}
+.wamp .content .common_list_con dt {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.wamp .content .common_list_con dd input {
+  vertical-align: bottom;
+  margin-right: 10px;
+}
+.wamp .content .common_list_con .edit_site {
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  width: 100px;
+  height: 30px;
+  background-color: #1A1B20;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+}
+.wamp .content .common_list_con .pay_style_con {
+  margin: 20px;
+}
+.wamp .content .common_list_con .pay_style_con input {
+  float: left;
+  margin: 14px 7px 0 0;
+}
+.wamp .content .common_list_con .pay_style_con label {
+  float: left;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px 10px 10px 40px;
+  margin-right: 25px;
+}
+.wamp .content .common_list_con .pay_style_con .cash {
+  background: url(../img/pay_icons.png) 8px top no-repeat #ffffff;
+}
+.wamp .content .common_list_con .pay_style_con .weixin {
+  background: url(../img/pay_icons.png) 6px -36px no-repeat #ffffff;
+}
+.wamp .content .common_list_con .pay_style_con .zhifubao {
+  background: url(../img/pay_icons.png) 12px -72px no-repeat #ffffff;
+  width: 50px;
+  height: 16px;
+}
+.wamp .content .common_list_con .goods_list_th {
+  height: 40px;
+  border-bottom: 1px solid #ccc;
+}
+.wamp .content .common_list_con .goods_list_th li {
+  float: left;
+  line-height: 40px;
+  text-align: center;
+}
+.wamp .content .common_list_con .goods_list_th .col01 {
+  width: 25%;
+}
+.wamp .content .common_list_con .goods_list_th .col02 {
+  width: 20%;
+}
+.wamp .content .common_list_con .goods_list_th .col03 {
+  width: 25%;
+}
+.wamp .content .common_list_con .goods_list_th .col04 {
+  width: 15%;
+}
+.wamp .content .common_list_con .goods_list_th .col05 {
+  width: 15%;
+}
+.wamp .content .common_list_con .goods_list_td {
+  height: 80px;
+  border-bottom: 1px solid #eeeded;
+}
+.wamp .content .common_list_con .goods_list_td li {
+  float: left;
+  line-height: 80px;
+  text-align: center;
+}
+.wamp .content .common_list_con .goods_list_td .col01 {
+  width: 4%;
+}
+.wamp .content .common_list_con .goods_list_td .col02 {
+  width: 6%;
+  text-align: right;
+}
+.wamp .content .common_list_con .goods_list_td .col02 img {
+  width: 63px;
+  height: 63px;
+  border: 1px solid #ddd;
+  display: block;
+  margin: 7px 0;
+  float: right;
+}
+.wamp .content .common_list_con .goods_list_td .col03 {
+  width: 15%;
+  text-align: left;
+  text-indent: 20px;
+}
+.wamp .content .common_list_con .goods_list_td .col04 {
+  width: 20%;
+}
+.wamp .content .common_list_con .goods_list_td .col05 {
+  width: 25%;
+}
+.wamp .content .common_list_con .goods_list_td .col06 {
+  width: 15%;
+}
+.wamp .content .common_list_con .goods_list_td .col07 {
+  width: 15%;
+}
+.wamp .content .common_list_con .settle_con {
+  margin: 10px;
+}
+.wamp .content .common_list_con .settle_con .total_goods_count,
+.wamp .content .common_list_con .settle_con .total_pay {
+  line-height: 24px;
+  text-align: right;
+}
+.wamp .content .common_list_con .settle_con .total_goods_count em,
+.wamp .content .common_list_con .settle_con .total_pay em {
+  font-size: 14px;
+  color: #ff4200;
+  padding: 0 5px;
+}
+.wamp .content .common_list_con .settle_con .total_goods_count b,
+.wamp .content .common_list_con .settle_con .total_pay b {
+  font-size: 14px;
+  color: #ff4200;
+  padding: 0 5px;
+}
+.wamp .content .order_submit {
+  float: right;
+}
+.wamp .content .order_submit a {
+  float: left;
+  line-height: 45px;
+  text-align: center;
+  width: 180px;
+  background: #1A1B20;
+  color: #fff;
+  margin: 10px 0px;
+}

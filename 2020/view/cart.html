@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/cart.css" />
+		<script src="../js/jQuery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/adata.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="shortcut icon" href="../img/logo.png">
+	</head>
+	<body>
+		<div class="wamp">
+			<div class="header">
+				<div class="top">
+					<div class="public-width">
+						<div class="fl">
+							<a href="../index.html">
+								<span>乐享</span>——校园网上交易平台
+							</a>
+						</div>
+						<ul class="fr">
+							<!-- <li class="active"><a href="index.html">主页</a></li>-->
+						</ul>
+					</div>
+				</div>
+				<div class="seach">
+					<div class="fl">
+						<input type="text" placeholder="请输入想要购买的物品" class="input_text" />
+						<input type="button" value="查询" class="input_btn" />
+					</div>
+					<div class="fr">
+						<div class="button">
+							<span class="icon"></span>
+							<a href="commodity_publish.html">发布/求购</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--内容展示-->
+			<div class="content public_width">				
+				<div class="total_count">全部商品<em>2</em>件</div>	
+				<ul class="cart_list_th clearfix">
+					<li class="col01">商品名称</li>
+					<li class="col02">用户ID</li>
+					<li class="col03">商品价格</li>
+					<li class="col04">数量</li>
+					<li class="col05">小计</li>
+					<li class="col06">操作</li>
+				</ul>
+<!-- 				<ul class="cart_list_td clearfix">
+					<li class="col01"><input type="checkbox" name="" checked></li>
+					<li class="col02"><img src="../img/goods/goods012.jpg"></li>
+					<li class="col03">奇异果<br><em>25.80元</em></li>
+					<li class="col04">500g</li>
+					<li class="col05">25.80元</li>
+					<li class="col06">
+						<div class="num_add">
+							<a href="javascript:;" class="add fl">+</a>
+							<input type="text" class="num_show fl" value="1">	
+							<a href="javascript:;" class="minus fl">-</a>	
+						</div>
+					</li>
+					<li class="col07">25.80元</li>
+					<li class="col08"><a href="javascript:;">删除</a></li>
+				</ul>
+				
+				<ul class="cart_list_td clearfix">
+					<li class="col01"><input type="checkbox" name="" checked></li>
+					<li class="col02"><img src="../img/goods/goods003.jpg"></li>
+					<li class="col03">大兴大棚草莓<br><em>16.80元/500g</em></li>
+					<li class="col04">500g</li>
+					<li class="col05">16.80元</li>
+					<li class="col06">
+						<div class="num_add">
+							<a href="javascript:;" class="add fl">+</a>
+							<input type="text" class="num_show fl" value="1">	
+							<a href="javascript:;" class="minus fl">-</a>	
+						</div>
+					</li>
+					<li class="col07">16.80元</li>
+					<li class="col08"><a href="javascript:;">删除</a></li>
+				</ul> -->
+				
+				<ul class="settlements">
+					<li class="col01"><input type="checkbox" name="" class="qx"></li>
+					<li class="col02">全选</li>
+					<li class="col03">合计(不含运费)：<span>¥</span><em>00.00</em><br>共计<b>0</b>件商品</li>
+					<li class="def">合计(不含运费)：<span>¥</span><em>42.60</em><br>共计<b>2</b>件商品</li>
+					<li class="col04"><a href="javascript:;">去结算</a></li>
+				</ul>
+			</div>
+			<!--尾部-->
+			<div class="footer">
+				<div class="foot-top">
+					<div class="public-width">
+						<div class="all fl">
+							<div>
+								<h3>
+									<a href="javascript:;">关于</a>
+								</h3>
+								<ul>
+									<li><a href="about.html">关于我们</a></li>
+								</ul>
+							</div>
+							<div>
+								<h3>
+									<a href="javascript:;">商品类别</a>
+								</h3>
+								<ul>
+									<li><a href="product_list.html">学习资料</a></li>
+									<li><a href="product_list.html">电子资料</a></li>
+									<li><a href="product_list.html">服饰衣包</a></li>
+									<li><a href="product_list.html">学习工具</a></li>
+									<li><a href="product_list.html">其他产品</a></li>
+								</ul>
+							</div>
+							<div>
+								<h3>
+									<a href="javascript:;">信息发布</a>
+								</h3>
+								<ul>
+									<li><a href="information_publish.html">最新发布</a></li>
+									<li><a href="information_publish.html">买家求购</a></li>
+									<li><a href="information_publish.html">卖家发布</a></li>
+									<li><a href="information_publish.html">免费物品</a></li>
+								</ul>
+							</div>
+							<div>
+								<h3>
+									<a href="javascript:;">友情链接</a>
+								</h3>
+								<ul>
+									<li><a href="http://www.lzy.edu.cn/">学院官网</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="comments fl">
+							<p>
+								<input type="text" placeholder="请输入您的姓名" class="border">
+								<input type="text" placeholder="请输入您的联系方式" class="border">
+							</p>
+							<p>
+								<textarea placeholder="请输入您的留言" class="border"></textarea>
+							</p>
+							<p>
+								<button type="button" class="border">提交</button>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="foot-btm">
+					泸州职业技术学院&nbsp;&nbsp;信息工程学院&nbsp;&nbsp;17计应3班&nbsp;&nbsp;郑小曼&nbsp;&nbsp;<a href="admin/login.php">管理员登录入口</a>
+				</div>
+			</div>
+		</div>
+		<script src="../js/cart.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/public2.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

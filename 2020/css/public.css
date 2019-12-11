@@ -1,0 +1,228 @@
+@charset 'utf-8';
+.public_width {
+  width: 1200px;
+  margin: 0px auto;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.wamp {
+  background: #f2f2f2;
+}
+.wamp .header .top {
+  width: 100%;
+  height: 48px;
+  background: #000000;
+  line-height: 48px;
+  position: fixed;
+  z-index: 111;
+}
+.wamp .header .top .public-width {
+  overflow: hidden;
+}
+.wamp .header .top .public-width .fl {
+  height: 48px;
+  padding-left: 40px;
+  box-sizing: border-box;
+}
+.wamp .header .top .public-width .fl a {
+  color: white;
+  font-size: 14px;
+}
+.wamp .header .top .public-width .fl a > span {
+  font-size: 18px;
+  color: #ea5695;
+}
+.wamp .header .top .public-width .fr > li {
+  height: 48px;
+  float: left;
+  padding: 0px 14px;
+}
+.wamp .header .top .public-width .fr > li a {
+  color: white;
+  font-size: 14px;
+}
+.wamp .header .top .public-width .fr > li > ul {
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  display: none;
+}
+.wamp .header .top .public-width .fr > li > ul li {
+  line-height: 28px;
+  padding: 0px 14px;
+}
+.wamp .header .top .public-width .fr .active {
+  background: grey;
+}
+.wamp .header .top .public-width .fr .active a {
+  color: #BCE8F1;
+}
+.wamp .header .seach {
+  width: 100%;
+  clear: both;
+  padding: 68px 91px 20px 91px;
+  background: white;
+  box-sizing: border-box;
+}
+.wamp .header .seach .fl {
+  position: relative;
+}
+.wamp .header .seach .fl .seach_con {
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  overflow-y: auto;
+  background: rgba(186, 204, 241, 0.5);
+  border-radius: 4px;
+  z-index: 1000;
+  display: none;
+}
+.wamp .header .seach .fl .seach_con .new {
+  display: none;
+}
+.wamp .header .seach .fl .seach_con .new li {
+  line-height: 42px;
+}
+.wamp .header .seach .fl input {
+  height: 40px;
+  border: 1px solid #BCE8F1;
+  box-sizing: border-box;
+}
+.wamp .header .seach .fr {
+  overflow: hidden;
+}
+.wamp .header .seach .fr .button {
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 2px 3px;
+  background: #BCE8F1;
+  border-radius: 4px;
+}
+.wamp .header .seach .fr .button .icon {
+  width: 25px;
+  height: 25px;
+  background: url(../img/编写.png) no-repeat;
+  background-size: contain;
+  float: left;
+  margin-top: 5px;
+}
+.wamp .header .seach .fr .button a {
+  float: left;
+  overflow: hidden;
+}
+.wamp .header .seach .input_text:nth-of-type(1) {
+  width: 320px;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.wamp .header .seach .input_text:nth-of-type(1)::placeholder {
+  text-indent: 8px;
+}
+.wamp .header .seach .input_btn:nth-of-type(2) {
+  width: 80px;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-left: -4px;
+  background: #BCE8F1;
+}
+.wamp .header .seach::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.wamp .footer {
+  height: 285px;
+  background: black;
+  clear: both;
+}
+.wamp .footer .foot-top {
+  height: 246px;
+  border-bottom: 1px solid white;
+  box-sizing: border-box;
+}
+.wamp .footer .foot-top .public-width {
+  height: 100%;
+}
+.wamp .footer .foot-top .public-width .all {
+  width: 615px;
+  height: 100%;
+  padding-left: 40px;
+  margin-left: 41px;
+}
+.wamp .footer .foot-top .public-width .all div {
+  width: 102px;
+  height: 100% ;
+  float: left;
+  padding-left: 41px;
+}
+.wamp .footer .foot-top .public-width .all h3 {
+  height: 34px;
+}
+.wamp .footer .foot-top .public-width .all h3 a {
+  float: left;
+  height: 29px;
+  line-height: 29px;
+  color: #fff;
+  font-size: 14px;
+  border-bottom: 2px solid #99d9ff;
+  box-sizing: border-box;
+}
+.wamp .footer .foot-top .public-width .all ul {
+  padding-top: 9px;
+}
+.wamp .footer .foot-top .public-width .all ul li {
+  padding-bottom: 9px;
+}
+.wamp .footer .foot-top .public-width .all ul li a {
+  color: white;
+}
+.wamp .footer .foot-top .public-width .comments {
+  width: 352px;
+  height: 236px;
+  padding: 9px 0px 0px 119px;
+}
+.wamp .footer .foot-top .public-width .comments p {
+  overflow: hidden;
+}
+.wamp .footer .foot-top .public-width .comments input {
+  width: 142px;
+  height: 28px;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.wamp .footer .foot-top .public-width .comments textarea {
+  width: 306px;
+  height: 104px;
+  resize: none;
+  overflow: hidden;
+}
+.wamp .footer .foot-top .public-width .comments button {
+  width: 106px;
+  height: 100%;
+}
+.wamp .footer .foot-top .public-width .comments .border {
+  border: 1px solid white;
+  color: white;
+  font-size: 12px;
+  background: transparent;
+}
+.wamp .footer .foot-btm {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}

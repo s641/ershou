@@ -1,0 +1,123 @@
+@charset 'utf-8';
+
+.content{
+	padding-top:20px;
+	clear:both;
+	.con_info{
+		overflow:hidden;
+		.list{
+			float: left;
+			width:200px;
+			height: auto;
+			li{
+				height: 40px;
+				line-height: 40px;
+				font-size: 16px;
+				margin-bottom: 3px;
+				box-sizing: border-box;
+				text-align: center;
+				background: white;
+			}
+			li:hover{
+				background: #BCE8F1;
+				a{
+					color: rgb(37, 26, 35);
+				}
+			}
+			li:nth-of-type(1){
+				border-top-left-radius: 4px;
+				border-top-right-radius: 4px;
+			}
+			li:last-of-type{
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 4px;
+				border: none;
+			}
+		}
+		.right{
+			width:998px;
+			float: left;
+			margin-left: 2px;
+			padding:1% 1%;
+			height:auto;
+			box-sizing:border-box;
+			background:white;
+			.product{
+				width: 100%;
+				height:auto;
+				overflow:hidden;
+				display:none;
+				h3{
+					width: 100%;
+					font-size: 20px;
+					line-height: 42px;
+					font-weight: bold;
+					clear: both;
+					background: #dbdbdb;
+					text-indent: 10px;
+				}
+				.pro{
+					width:215px;
+					height:260px;
+					padding: 10px;
+					margin-right:8px;
+					margin-bottom:8px;
+					float: left;
+					&>a{
+						width:100%;
+						height:200px;
+						display:inline-block;
+						img{
+							width:100%;
+							height:100%;
+						}
+					}
+					h4{
+						margin-bottom:2px;
+						a{
+							color: black;
+							font-size: 16px;
+						}
+					}
+					&>div{
+						overflow:hidden;
+						.fl{
+							color: crimson;
+							font-size: 14px;
+							line-height: 32px;
+						}
+						.icon{
+							width: 18px;
+							height: 18px;
+							margin-left: 2px;
+						}
+						.icon:nth-of-type(2){
+							background: url(../img/收%20藏.png) no-repeat;
+							background-size: contain;
+							&:hover{
+								background: url(../img/收%20藏1.png) no-repeat;
+								background-size: contain;
+							}
+						}
+						// .icon:nth-of-type(3){
+						// 	background: url(../img/点赞.png) no-repeat;
+						// 	background-size: contain;
+						// 	&:hover{
+						// 		background: url(../img/点赞1.png) no-repeat;
+						// 		background-size: contain;
+						// 	}
+						// }
+						// .icon:nth-of-type(4){
+						// 	background: url(../img/购物车1.png) no-repeat;
+						// 	background-size: contain;
+						// 	&:hover{
+						// 		background: url(../img/购物车2.png) no-repeat;
+						// 		background-size: contain;
+						// 	}
+						// }
+					}
+				}
+			}
+		}
+	}
+}

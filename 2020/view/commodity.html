@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<title>商品详情页面</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/commodity.css" />
+		<script src="../js/jQuery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/adata.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="shortcut icon" href="../img/logo.png">
+	</head>
+	<body>
+		<div class="wamp">
+			<div class="header">
+				<div class="top">
+					<div class="public-width">
+						<div class="fl">
+							<a href="../index.html">
+								<span>乐享</span>——校园网上交易平台
+							</a>
+						</div>
+						<ul class="fr">
+							<!-- <li class="active"><a href="index.html">主页</a></li>-->
+						</ul>
+					</div>
+				</div>
+				<div class="seach">
+					<div class="fl">
+						<input type="text" placeholder="请输入想要购买的物品" class="input_text" />
+						<input type="button" value="查询" class="input_btn" />
+						<div class="seach_con">
+							<p class="defult">正在搜索……</p>
+							<ul class="new">
+								<li>消息</li>
+							</ul>
+						</div>
+					</div>
+					<div class="fr">
+						<div class="button">
+							<span class="icon"></span>
+							<a href="commodity_publish.html">发布/求购</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--内容展示-->
+			<div class="content public_width">
+				<div class="goods_detail_con">
+					<!-- <div class="goods_detail_pic fl"><img src="../img/goods/goods_detail.jpg"></div>
+					<div class="goods_detail_list fr">
+						<h3>大兴大棚草莓</h3>
+						<p>草莓浆果柔软多汁，味美爽口，适合速冻保鲜贮藏。草莓速冻后，可以保持原有的色、香、味，既便于贮藏，又便于外销。</p>
+						<div class="prize_bar">
+							<span class="show_pirze">¥<em>16.80</em></span>
+							<span class="show_unit">单  位：500g</span>
+						</div>
+						<div class="goods_num clearfix">
+							<div class="num_name fl">数 量：</div>
+							<div class="num_add fl">
+								<input type="text" class="num_show fl" value="1">
+								<a href="javascript:;" class="add fr">+</a>
+								<a href="javascript:;" class="minus fr">-</a>	
+							</div> 
+						</div>
+						<div class="total">总价：<em>16.80元</em></div>
+						<p>用户：李明&nbsp;&nbsp;&nbsp;&nbsp;<a href="user_info.html">点我了解具体详情</a></p>
+						<div class="operate_btn">
+							<a href="order.html" class="buy_btn">立即购买</a>
+							<a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>				
+						</div>
+					</div> -->
+				</div>
+				
+				<div class="main_wrap">
+					<div class="l_wrap fl">
+						<div class="new_goods">
+							<h3>新品推荐</h3>
+							<ul>
+								<!-- <li>
+									<a href="#"><img src="../img/goods/goods001.jpg"></a>
+									<h4><a href="#">进口柠檬</a></h4>
+									<div class="prize">￥3.90</div>
+								</li>
+								<li>
+									<a href="#"><img src="../img/goods/goods002.jpg"></a>
+									<h4><a href="#">玫瑰香葡萄</a></h4>
+									<div class="prize">￥16.80</div>
+								</li> -->
+							</ul>
+						</div>
+					</div>
+				
+					<div class="r_wrap fr clearfix">
+						<ul class="detail_tab clearfix">
+							<li class="active">商品介绍</li>
+							<li>评论</li>
+						</ul>
+				
+						<div class="tab_content active">
+							<h5>商品详情：</h5>
+							<p>思科认证考试书籍,8本CCNA/CCNP/CCIE 路由交换，语音认证考试指南。</p>
+						</div>
+						<div class="comment">
+							<div class="com_info">
+								<input type="text" placeholder="请输入你的评论">
+								<button>评论</button>
+							</div>
+							<div class="com_content">
+								<!-- <div class="combox">
+									<div class="pl-text">
+									    <a href="#" class="pl-name">张三 : </a>
+									    <span class="pl-con">&nbsp;东西感觉怎么样</span>
+									</div>
+									<div class="date-dz">
+									    <span class="fl comment-time">2017-5-2 11:11:39</span>
+									    <div class="fr">
+									        <a href="javascript:;" class="removeBlock">删除</a>
+									        <a href="javascript:;" class="date-dz-pl">回复</a>
+									        <span class="date-dz-line">|</span>
+									        <a href="javascript:;" class="date-dz-z">赞 (<i class="z-num">666</i>)</a>
+									    </div>
+										<div class="hf_con"></div>
+									</div>
+								</div>
+								<div class="combox">
+									<div class="pl-text">
+									    <a href="#" class="pl-name">张三 : </a>
+									    <span class="pl-con">&nbsp;东西感觉怎么样</span>
+									</div>
+									<div class="date-dz">
+									    <span class="fl comment-time">2017-5-2 11:11:39</span>
+									    <div class="fr">
+									        <a href="javascript:;" class="removeBlock">删除</a>
+									        <a href="javascript:;" class="date-dz-pl">回复</a>
+									        <span class="date-dz-line">|</span>
+									        <a href="javascript:;" class="date-dz-z">赞 (<i class="z-num">666</i>)</a>
+									    </div>
+										<div class="hf_con"></div>
+									</div>
+								</div>
+								<div class="combox">
+									<div class="pl-text">
+									    <a href="#" class="pl-name">张三 : </a>
+									    <span class="pl-con">&nbsp;东西感觉怎么样</span>
+									</div>
+									<div class="date-dz">
+									    <span class="fl comment-time">2017-5-2 11:11:39</span>
+									    <div class="fr">
+									        <a href="javascript:;" class="removeBlock">删除</a>
+									        <a href="javascript:;" class="date-dz-pl">回复</a>
+									        <span class="date-dz-line">|</span>
+									        <a href="javascript:;" class="date-dz-z">赞 (<i class="z-num">666</i>)</a>
+									    </div>
+										<div class="hf_con"></div>
+									</div>
+								</div>
+								<div class="combox">
+									<div class="pl-text">
+									    <a href="#" class="pl-name">张三 : </a>
+									    <span class="pl-con">&nbsp;东西感觉怎么样</span>
+									</div>
+									<div class="date-dz">
+									    <span class="fl comment-time">2017-5-2 11:11:39</span>
+									    <div class="fr">
+									        <a href="javascript:;" class="removeBlock">删除</a>
+									        <a href="javascript:;" class="date-dz-pl">回复</a>
+									        <span class="date-dz-line">|</span>
+									        <a href="javascript:;" class="date-dz-z">赞 (<i class="z-num">666</i>)</a>
+									    </div>
+										<div class="hf_con"></div>
+									</div>
+								</div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--尾部-->
+			<div class="footer">
+				<div class="foot-top">
+					<div class="public-width">
+						<div class="all fl">
+							<div>
+								<h3>
+									<a href="javascript:;">关于</a>
+								</h3>
+								<ul>
+									<li><a href="about.html">关于我们</a></li>
+								</ul>
+							</div>
+							<div>
+								<h3>
+									<a href="javascript:;">商品类别</a>
+								</h3>
+								<ul>
+									<li><a href="product_list.html">学习资料</a></li>
+									<li><a href="product_list.html">电子资料</a></li>
+									<li><a href="product_list.html">服饰衣包</a></li>
+									<li><a href="product_list.html">学习工具</a></li>
+									<li><a href="product_list.html">其他产品</a></li>
+								</ul>
+							</div>
+							<div>
+								<h3>
+									<a href="javascript:;">信息发布</a>
+								</h3>
+								<ul>
+									<li><a href="information_publish.html">最新发布</a></li>
+									<li><a href="information_publish.html">买家求购</a></li>
+									<li><a href="information_publish.html">卖家发布</a></li>
+									<li><a href="information_publish.html">免费物品</a></li>
+								</ul>
+							</div>
+							<div>
+								<h3>
+									<a href="javascript:;">友情链接</a>
+								</h3>
+								<ul>
+									<li><a href="http://www.lzy.edu.cn/">学院官网</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="comments fl">
+							<p>
+								<input type="text" placeholder="请输入您的姓名" class="border">
+								<input type="text" placeholder="请输入您的联系方式" class="border">
+							</p>
+							<p>
+								<textarea placeholder="请输入您的留言" class="border"></textarea>
+							</p>
+							<p>
+								<button type="button" class="border">提交</button>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="foot-btm">
+					泸州职业技术学院&nbsp;&nbsp;信息工程学院&nbsp;&nbsp;17计应3班&nbsp;&nbsp;郑小曼&nbsp;&nbsp;<a href="admin/login.php">管理员登录入口</a>
+				</div>
+			</div>
+		</div>
+		<script src="../js/commodity.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/public2.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

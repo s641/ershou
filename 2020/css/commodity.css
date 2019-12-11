@@ -1,0 +1,325 @@
+@charset 'utf-8';
+.wamp .content {
+  /* 商品详情样式 */
+}
+.wamp .content .goods_detail_con {
+  width: 1198px;
+  height: 398px;
+  border: 1px solid #ededed;
+  margin: 0 auto 20px;
+}
+.wamp .content .goods_detail_con .ragnifier-container {
+  width: 350px;
+  height: 350px;
+  margin: 24px 24px 0 24px;
+  float: left;
+  position: relative;
+}
+.wamp .content .goods_detail_con .ragnifier-container .ragnifier-warp {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.wamp .content .goods_detail_con .ragnifier-container .ragnifier-warp img {
+  width: 100%;
+  height: 100%;
+}
+.wamp .content .goods_detail_con .ragnifier-container .ragnifier-warp div {
+  width: 100px;
+  height: 100px;
+  background: yellow;
+  opacity: 0.4;
+  position: absolute;
+}
+.wamp .content .goods_detail_con .ragnifier-container .ragnifier-warp div:hover {
+  cursor: move;
+}
+.wamp .content .goods_detail_con .ragnifier-container .ragnifier-origin {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 110%;
+  overflow: hidden;
+  top: 0;
+  z-index: 10000;
+  display: none;
+}
+.wamp .content .goods_detail_con .ragnifier-container .ragnifier-origin img {
+  width: 120%;
+  height: 120%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.wamp .content .goods_detail_con .goods_detail_list {
+  width: 730px;
+  height: 350px;
+  margin: 24px 24px 0 0;
+  float: left;
+}
+.wamp .content .goods_detail_con .goods_detail_list h3 {
+  font-size: 24px;
+  line-height: 24px;
+  color: #666;
+  font-weight: normal;
+}
+.wamp .content .goods_detail_con .goods_detail_list p {
+  color: #666;
+  line-height: 40px;
+}
+.wamp .content .goods_detail_con .goods_detail_list .prize_bar {
+  height: 72px;
+  background-color: #fff5f5;
+  line-height: 72px;
+}
+.wamp .content .goods_detail_con .goods_detail_list .prize_bar .show_pirze {
+  font-size: 20px;
+  color: #ff3e3e;
+  padding-left: 20px;
+}
+.wamp .content .goods_detail_con .goods_detail_list .prize_bar .show_pirze em {
+  font-style: normal;
+  font-size: 36px;
+  padding-left: 10px;
+}
+.wamp .content .goods_detail_con .goods_detail_list .prize_bar .show_unit {
+  padding-left: 150px;
+}
+.wamp .content .goods_detail_con .goods_detail_list .goods_num {
+  height: 52px;
+  margin-top: 19px;
+}
+.wamp .content .goods_detail_con .goods_detail_list .goods_num .num_name {
+  width: 70px;
+  height: 52px;
+  line-height: 52px;
+}
+.wamp .content .goods_detail_con .goods_detail_list .goods_num .num_add {
+  width: 75px;
+  height: 50px;
+  border: 1px solid #dddddd;
+}
+.wamp .content .goods_detail_con .goods_detail_list .goods_num .num_add input {
+  width: 49px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  border: 0px;
+  outline: none;
+  font-size: 14px;
+  color: #666;
+}
+.wamp .content .goods_detail_con .goods_detail_list .goods_num .num_add .add,
+.wamp .content .goods_detail_con .goods_detail_list .goods_num .num_add .minus {
+  width: 25px;
+  line-height: 25px;
+  text-align: center;
+  border-left: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  color: #666;
+  font-size: 14px;
+}
+.wamp .content .goods_detail_con .goods_detail_list .goods_num .num_add .minus {
+  border-bottom: 0px;
+}
+.wamp .content .goods_detail_con .goods_detail_list .operate_btn {
+  height: 40px;
+  margin-top: 35px;
+  font-size: 0;
+  position: relative;
+}
+.wamp .content .goods_detail_con .goods_detail_list .operate_btn .buy_btn,
+.wamp .content .goods_detail_con .goods_detail_list .operate_btn .add_cart {
+  display: inline-block;
+  width: 178px;
+  height: 38px;
+  border: 1px solid #c40000;
+  font-size: 14px;
+  color: #c40000;
+  line-height: 38px;
+  text-align: center;
+  margin-right: 10px;
+  background-color: #ffeded;
+}
+.wamp .content .goods_detail_con .goods_detail_list .operate_btn .add_cart {
+  background-color: #c40000;
+  color: #fff;
+  position: relative;
+  z-index: 10;
+}
+.wamp .content .goods_detail_con .goods_detail_list .operate_btn .cart {
+  float: right;
+  display: inline-block;
+  width: 40px;
+  height: 38px;
+  background: url(../img/购物车1.png) no-repeat;
+  background-size: contain;
+}
+.wamp .content .goods_detail_con .goods_detail_list .operate_btn .cart:hover {
+  background: url(../img/购物车2.png) no-repeat;
+  background-size: contain;
+}
+.wamp .content .main_wrap {
+  width: 100%;
+  clear: both;
+  margin: 0 auto;
+}
+.wamp .content .main_wrap .l_wrap {
+  width: 20%;
+  overflow: hidden;
+  /* 新品推荐样式 */
+}
+.wamp .content .main_wrap .l_wrap .new_goods {
+  border: 1px solid #ededed;
+  border-top: 2px solid #BCE8F1;
+  padding-bottom: 10px;
+}
+.wamp .content .main_wrap .l_wrap .new_goods h3 {
+  height: 33px;
+  line-height: 33px;
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #ededed;
+  font-size: 14px;
+  font-weight: normal;
+  text-indent: 10px;
+}
+.wamp .content .main_wrap .l_wrap .new_goods ul {
+  width: 160px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.wamp .content .main_wrap .l_wrap .new_goods ul li {
+  border-bottom: 1px solid #ededed;
+  margin-bottom: -1px;
+}
+.wamp .content .main_wrap .l_wrap .new_goods ul li img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 10px auto;
+}
+.wamp .content .main_wrap .l_wrap .new_goods ul li h4 {
+  width: 160px;
+  margin: 0 auto;
+}
+.wamp .content .main_wrap .l_wrap .new_goods ul li h4 a {
+  font-weight: normal;
+  color: #666;
+  display: block;
+  width: 160px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.wamp .content .main_wrap .l_wrap .new_goods ul li .prize {
+  font-size: 14px;
+  color: #da260e;
+  margin: 10px auto;
+}
+.wamp .content .main_wrap .r_wrap {
+  width: 80%;
+  overflow: hidden;
+}
+.wamp .content .main_wrap .r_wrap .detail_tab {
+  height: 35px;
+  border-bottom: 1px solid #BCE8F1;
+}
+.wamp .content .main_wrap .r_wrap .detail_tab li {
+  height: 34px;
+  line-height: 34px;
+  padding: 0 30px;
+  font-size: 14px;
+  color: #333333;
+  float: left;
+  border: 1px solid #e8e8e8;
+  border-bottom: 0px;
+  background-color: #faf8f8;
+}
+.wamp .content .main_wrap .r_wrap .detail_tab .active {
+  border-top: 2px solid #BCE8F1;
+  position: relative;
+  background-color: #fff;
+  border-left: 1px solid #BCE8F1;
+  border-right: 1px solid #BCE8F1;
+  top: -1px;
+  height: 35px;
+}
+.wamp .content .main_wrap .r_wrap .tab_content {
+  display: none;
+  height: 420px;
+  border: 1px solid #B2B2B2;
+  padding: 10px 2%;
+  border-top: none;
+  box-sizing: border-box;
+}
+.wamp .content .main_wrap .r_wrap .tab_content h5 {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #044d39;
+}
+.wamp .content .main_wrap .r_wrap .tab_content p {
+  line-height: 24px;
+  margin-top: 5px;
+}
+.wamp .content .main_wrap .r_wrap .comment {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #B2B2B2;
+  padding: 10px 5%;
+  border-top: none;
+  box-sizing: border-box;
+  display: none;
+}
+.wamp .content .main_wrap .r_wrap .comment .com_info {
+  width: 100%;
+  height: 150px;
+  border-bottom: 1px solid #B2B2B2;
+}
+.wamp .content .main_wrap .r_wrap .comment .com_info input {
+  height: 80px;
+  width: 100%;
+  border: 1px solid #B2B2B2;
+  border-radius: 4px;
+}
+.wamp .content .main_wrap .r_wrap .comment .com_info button {
+  float: right;
+  width: 20%;
+  line-height: 42px;
+  margin: 10px -2px 10px 0px;
+  background: #BCE8F1;
+  border-radius: 4px;
+}
+.wamp .content .main_wrap .r_wrap .comment .com_content {
+  width: 100%;
+  overflow: hidden;
+  margin: 10px auto;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.wamp .content .main_wrap .r_wrap .comment .com_content .combox {
+  height: 60px;
+  clear: both;
+  background: white;
+  margin-bottom: 5px;
+}
+.wamp .content .main_wrap .r_wrap .comment .com_content .combox .pl-text {
+  width: 100%;
+  height: auto;
+  padding-left: 5px;
+  box-sizing: border-box;
+}
+.wamp .content .main_wrap .r_wrap .comment .com_content .combox .pl-text a {
+  color: red;
+}
+.wamp .content .main_wrap .r_wrap .comment .com_content .combox .date-dz {
+  height: 32px;
+  line-height: 32px;
+  padding-left: 5px;
+  box-sizing: border-box;
+}
+.wamp .content .main_wrap .r_wrap .active {
+  display: block;
+}
