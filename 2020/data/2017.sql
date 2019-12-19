@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: 2019-12-11 11:54:18
+-- Generation Time: 2019-12-19 05:52:33
 -- 服务器版本： 5.7.21
 -- PHP Version: 5.6.35
 
@@ -31,19 +31,20 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `b_admin`;
 CREATE TABLE IF NOT EXISTS `b_admin` (
   `aid` int(11) NOT NULL AUTO_INCREMENT COMMENT '管理员Id',
-  `teacher` varchar(30) COLLATE utf8_german2_ci NOT NULL COMMENT '教工号',
-  `password` varchar(50) COLLATE utf8_german2_ci NOT NULL COMMENT '密码',
+  `teacher` varchar(30) CHARACTER SET utf8 NOT NULL COMMENT '教工号',
+  `password` varchar(50) CHARACTER SET utf8 NOT NULL COMMENT '密码',
   `addtime` datetime DEFAULT NULL COMMENT '添加时间',
   `status` int(4) NOT NULL DEFAULT '1' COMMENT '状态0或1',
   PRIMARY KEY (`aid`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_german2_ci;
 
 --
 -- 转存表中的数据 `b_admin`
 --
 
 INSERT INTO `b_admin` (`aid`, `teacher`, `password`, `addtime`, `status`) VALUES
-(1, 'admin', '123456', '2019-10-08 00:00:00', 1);
+(1, 'admin', '123456', '2019-10-08 00:00:00', 1),
+(2, 'zhengxiaoman', '123456', '2019-12-18 01:12:03', 1);
 
 -- --------------------------------------------------------
 
@@ -70,6 +71,30 @@ CREATE TABLE IF NOT EXISTS `b_cart` (
 INSERT INTO `b_cart` (`cid`, `uid`, `gid`, `cnum`, `cprice`, `ccreate_time`, `cstatus`) VALUES
 (8, 1, 9, 1, 1615, '2019-10-28 10:25:47', 1),
 (9, 2, 17, 1, 5000, '2019-12-01 10:29:14', 1);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `b_gonggao`
+--
+
+DROP TABLE IF EXISTS `b_gonggao`;
+CREATE TABLE IF NOT EXISTS `b_gonggao` (
+  `ggid` int(11) NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `title` varchar(255) NOT NULL COMMENT '标题',
+  `content` text NOT NULL COMMENT '内容',
+  `time` datetime NOT NULL COMMENT '发布时间',
+  PRIMARY KEY (`ggid`)
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `b_gonggao`
+--
+
+INSERT INTO `b_gonggao` (`ggid`, `title`, `content`, `time`) VALUES
+(15, '1月10放假通知', '1月10放假通知', '2019-12-12 00:00:00'),
+(16, 'xxxxxxxxxxxxxx', '<p>\r\n	xxx</p>', '2019-12-18 00:00:00'),
+(17, '信息工程学院改革中', '<p>\r\n	顶顶顶顶顶顶顶顶顶顶</p>', '2019-12-18 12:35:05');
 
 -- --------------------------------------------------------
 
@@ -133,9 +158,16 @@ CREATE TABLE IF NOT EXISTS `b_information` (
   `uid` int(11) NOT NULL COMMENT '用户id',
   `pname` varchar(255) NOT NULL COMMENT '信息标题',
   `pcontent` text NOT NULL COMMENT '信息内容',
-  `pimage` varchar(255) NOT NULL COMMENT '图片',
   PRIMARY KEY (`pid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `b_information`
+--
+
+INSERT INTO `b_information` (`pid`, `uid`, `pname`, `pcontent`) VALUES
+(1, 46, '求购理科专升本资料', '全套资料，信息工程学院的计算机应用技术专业'),
+(2, 1, 'ddddddd', '<p>\r\n	&nbsp; &nbsp; &nbsp; &nbsp;这里写dddd你的初始化内容\r\n	 &nbsp; &nbsp;</p>');
 
 -- --------------------------------------------------------
 
@@ -200,7 +232,7 @@ CREATE TABLE IF NOT EXISTS `b_message` (
   `mcontent` text,
   `mcreate_time` datetime NOT NULL,
   PRIMARY KEY (`mid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `b_message`
@@ -210,8 +242,7 @@ INSERT INTO `b_message` (`mid`, `gid`, `uid`, `mcontent`, `mcreate_time`) VALUES
 (1, 18, 1, '666', '2019-10-28 09:29:42'),
 (2, 17, 1, '666', '2019-10-28 09:39:01'),
 (3, 5, 1, '厉害', '2019-10-28 10:25:40'),
-(4, 3, 1, '还可以', '2019-10-30 16:14:58'),
-(5, 3, 1, '差评', '2019-10-30 16:15:08');
+(4, 3, 1, '还可以', '2019-10-30 16:14:58');
 
 -- --------------------------------------------------------
 
@@ -224,17 +255,20 @@ CREATE TABLE IF NOT EXISTS `b_order` (
   `oid` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `uid` int(11) NOT NULL,
   `gid` int(11) NOT NULL,
+  `num` int(11) NOT NULL DEFAULT '1' COMMENT '商品数量',
+  `order_method` varchar(255) NOT NULL DEFAULT '货到付款' COMMENT '支付方式',
+  `fuid` int(11) NOT NULL COMMENT '发货人id',
+  `order_addtime` datetime NOT NULL COMMENT '下单时间',
   `ostatus` int(11) NOT NULL DEFAULT '0' COMMENT '0为已付款1为未付款',
   PRIMARY KEY (`oid`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `b_order`
 --
 
-INSERT INTO `b_order` (`oid`, `uid`, `gid`, `ostatus`) VALUES
-(8, 1, 9, 0),
-(9, 2, 17, 0);
+INSERT INTO `b_order` (`oid`, `uid`, `gid`, `num`, `order_method`, `fuid`, `order_addtime`, `ostatus`) VALUES
+(1, 45, 9, 1, '货到付款', 46, '2019-12-19 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -247,7 +281,7 @@ CREATE TABLE IF NOT EXISTS `b_type` (
   `tid` int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
   `tname` varchar(255) NOT NULL,
   PRIMARY KEY (`tid`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `b_type`
@@ -275,7 +309,7 @@ CREATE TABLE IF NOT EXISTS `b_typeclass` (
   `tid` int(11) NOT NULL COMMENT '大分类id',
   `tcname` varchar(255) NOT NULL COMMENT '类名',
   PRIMARY KEY (`tcid`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `b_typeclass`
@@ -316,82 +350,30 @@ INSERT INTO `b_typeclass` (`tcid`, `tid`, `tcname`) VALUES
 DROP TABLE IF EXISTS `b_user`;
 CREATE TABLE IF NOT EXISTS `b_user` (
   `uid` int(10) NOT NULL AUTO_INCREMENT COMMENT '用户id',
-  `user_num` int(10) NOT NULL COMMENT '学号',
+  `user_num` int(10) DEFAULT NULL COMMENT '学号',
   `user_password` varchar(50) NOT NULL COMMENT '密码',
   `user_name` varchar(10) NOT NULL COMMENT '姓名',
-  `user_sex` varchar(5) NOT NULL COMMENT '性别',
-  `user_college` varchar(10) NOT NULL COMMENT '院系',
+  `user_sex` varchar(5) DEFAULT NULL COMMENT '性别',
+  `user_college` varchar(10) DEFAULT NULL COMMENT '院系',
   `user_class` varchar(30) NOT NULL COMMENT '班级',
   `user_phone` varchar(11) NOT NULL COMMENT '电话',
-  `user_QQ` varchar(15) NOT NULL COMMENT 'QQ',
-  `user_picture` varchar(200) NOT NULL COMMENT '图片',
+  `user_QQ` varchar(15) DEFAULT NULL COMMENT 'QQ',
   `user_type` varchar(10) NOT NULL COMMENT '类别',
-  `user_state` int(1) NOT NULL COMMENT '1禁用0正常',
+  `user_state` int(1) NOT NULL DEFAULT '1' COMMENT '0禁用1正常',
   PRIMARY KEY (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `b_user`
 --
 
-INSERT INTO `b_user` (`uid`, `user_num`, `user_password`, `user_name`, `user_sex`, `user_college`, `user_class`, `user_phone`, `user_QQ`, `user_picture`, `user_type`, `user_state`) VALUES
-(44, 16204069, 'e10adc3949ba59abbe56e057f20f883e', '曹若琳', '女', '信息工程学院', '16级计算机应用技术3班', '18008202453', '454589227', 'Uploads/2018-11-01/5bdabfd95457c.jpg', '学生', 0),
-(45, 16204068, '4297f44b13955235245b2497399d7a93', '宋泽', '男', '信息工程学院', '16级计应3班', '18008202453', '1785481543', 'Uploads/2018-11-05/5be011cdae6e0.jpg', '学生', 0),
-(46, 16204067, 'e10adc3949ba59abbe56e057f20f883e', '杨素岚', '女', '信息工程学院', '计算机应用技术3班', '12323454321', '333333333', 'Uploads/2018-11-09/5be556cc06530.jpg', '学生', 0),
-(47, 16298987, '4297f44b13955235245b2497399d7a93', '易秋虹', '女', '机械工程学院', '16级机械3班', '12332123212', '1785481543', 'Uploads/2018-11-09/5be555c5792b3.jpg', '学生', 1),
-(49, 16209089, '4297f44b13955235245b2497399d7a93', '张蕾', '女', '人文学院', '16级小教3班', '18008202453', '1785481543', 'Uploads/2018-11-09/5be5561261220.jpg', '学生', 0),
-(50, 13243234, '4297f44b13955235245b2497399d7a93', '吴港', '男', '人文学院', '16级小教3班', '12332123212', '1785481543', 'Uploads/2018-11-09/5be55630d8008.jpg', '学生', 0),
-(51, 14232123, '4297f44b13955235245b2497399d7a93', '王老', '男', '建筑工程学院', '16级装饰3班', '18008202453', '1785481543', 'Uploads/2018-11-09/5be55661c5af2.jpg', '老师', 0),
-(52, 14232345, '4297f44b13955235245b2497399d7a93', '蒋斌', '男', '电子工程学院', '16级装饰3班', '18008202453', '1785481543', 'Uploads/2018-11-09/5be55681a9a58.jpg', '学生', 0),
-(53, 16545654, '4297f44b13955235245b2497399d7a93', '王丹', '女', '国际学院', '15级英教3班', '12332123212', '1785481543', 'Uploads/2018-11-09/5be556b6e3217.jpg', '学生', 0),
-(54, 14323456, '4297f44b13955235245b2497399d7a93', '伍燕', '女', '郎酒学院', '16级计应3班', '18008202453', '1785481543', 'Uploads/2018-11-09/5be5570c19d25.jpg', '学生', 0),
-(55, 23456786, '4297f44b13955235245b2497399d7a93', '赵丽丽', '女', '艺术学院', '15级英教3班', '18008202453', '1785481543', 'Uploads/2018-11-09/5be5572927f77.jpg', '学生', 0),
-(56, 16204001, '4297f44b13955235245b2497399d7a93', '曹若', '男', '信息工程学院', '16级计应3班', '18008202453', '1785481543', 'Uploads/2018-11-19/5bf272b89a185.jpg', '学生', 0),
-(58, 16204099, '4297f44b13955235245b2497399d7a93', '张家祥', '男', '商学院', '17级市场营销3班', '18008202453', '1785481543', 'Uploads/2018-11-19/5bf28774524c5.jpg', '学生', 0),
-(59, 16253217, 'cbbbdd851c60627b4785e3ecedc8ff3e', '张小花', '女', '人文学院', '16小教二班', '18715873541', '256509989', 'Uploads/2018-11-22/5bf69cb9b46df.jpg', '学生', 0),
-(60, 16204000, 'f5bb0c8de146c67b44babbf4e6584cc0', '刘珊珊', '女', '继续教育学院', '', '18008202453', '1785481543', 'Uploads/2018-12-03/5c050097c7bb5.jpg', '学生', 0),
-(61, 16204002, '4297f44b13955235245b2497399d7a93', '熊三', '男', '信息工程学院', '', '18008202452', '1785481543', 'Uploads/2018-12-04/5c0613168297a.jpg', '学生', 0),
-(62, 16204055, 'e10adc3949ba59abbe56e057f20f883e', '陈伟', '男', '信息工程学院', '16级计应3班', '18008202453', '1785481543', 'Uploads/2018-12-07/5c09f1a8c126f.jpg', '学生', 0),
-(63, 16204044, '4297f44b13955235245b2497399d7a93', '若琳', '女', '信息工程学院', '', '', '', 'Uploads/2018-12-07/5c0a2e0272123.jpg', '学生', 0),
-(64, 16203069, '4297f44b13955235245b2497399d7a93', '牛小与', '女', '国际学院', '', '', '', 'Uploads/2018-12-07/5c0a2fd401b52.jpg', '学生', 0);
-
--- --------------------------------------------------------
-
---
--- 替换视图以便查看 `b_vcart`
--- (See below for the actual view)
---
-DROP VIEW IF EXISTS `b_vcart`;
-CREATE TABLE IF NOT EXISTS `b_vcart` (
-);
-
--- --------------------------------------------------------
-
---
--- 替换视图以便查看 `b_vmessage`
--- (See below for the actual view)
---
-DROP VIEW IF EXISTS `b_vmessage`;
-CREATE TABLE IF NOT EXISTS `b_vmessage` (
-);
-
--- --------------------------------------------------------
-
---
--- 视图结构 `b_vcart`
---
-DROP TABLE IF EXISTS `b_vcart`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `b_vcart`  AS  select `c`.`cid` AS `cid`,`c`.`uid` AS `uid`,`g`.`gid` AS `gid`,`g`.`guid` AS `guid`,`c`.`cnum` AS `cnum`,`c`.`ccreate_time` AS `ccreate_time`,`g`.`gname` AS `gname`,`u`.`uname` AS `uname`,`g`.`gprice` AS `gprice`,`g`.`gimgarray` AS `gimgarray`,`g`.`gdetail` AS `gdetail`,`g`.`gadname` AS `gadname` from ((`b_cart` `c` left join `b_goods` `g` on((`c`.`gid` = `g`.`gid`))) left join `b_user` `u` on((`c`.`uid` = `u`.`uid`))) ;
-
--- --------------------------------------------------------
-
---
--- 视图结构 `b_vmessage`
---
-DROP TABLE IF EXISTS `b_vmessage`;
-
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `b_vmessage`  AS  select `m`.`mid` AS `mid`,`m`.`mcontent` AS `mcontent`,`u`.`uid` AS `uid`,`u`.`uname` AS `uname`,`g`.`gid` AS `gid`,`m`.`mcreate_time` AS `mcreate_time`,`u`.`uavatar` AS `uavatar`,`g`.`guid` AS `guid` from ((`b_message` `m` left join `b_user` `u` on((`m`.`muid` = `u`.`uid`))) left join `b_goods` `g` on((`m`.`mgid` = `g`.`gid`))) ;
+INSERT INTO `b_user` (`uid`, `user_num`, `user_password`, `user_name`, `user_sex`, `user_college`, `user_class`, `user_phone`, `user_QQ`, `user_type`, `user_state`) VALUES
+(46, 16204067, 'e10adc3949ba59abbe56e057f20f883e', '杨素岚', '女', '信息工程学院', '计算机应用技术3班', '12323454321', '333333333', '学生', 0),
+(47, 16298987, '4297f44b13955235245b2497399d7a93', '易秋虹', '女', '机械工程学院', '16级机械3班', '12332123212', '1785481543', '学生', 1),
+(49, 16209089, '4297f44b13955235245b2497399d7a93', '张蕾', '女', '人文学院', '16级小教3班', '18008202453', '1785481543', '学生', 0),
+(50, 13243234, '4297f44b13955235245b2497399d7a93', '吴港', '男', '人文学院', '16级小教3班', '12332123212', '1785481543', '学生', 0),
+(51, 14232123, '4297f44b13955235245b2497399d7a93', '王老', '男', '建筑工程学院', '16级装饰3班', '18008202453', '1785481543', '老师', 0),
+(52, NULL, 'd8406e8445cc99a16ab984cc28f6931615c766fc', '111111', NULL, NULL, '11111111111', '13438762741', NULL, '1111111', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
